@@ -1,0 +1,2 @@
+C:\Users\allen\OneDrive\桌面\HotKey\CopyToast\bin\Release\net8.0-windows\win-x64\publish\AIHotKey.pdb
+C:\Users\allen\OneDrive\桌面\HotKey\CopyToast\bin\Release\net8.0-windows\win-x64\publish\AIHotKey.exe
