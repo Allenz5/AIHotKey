@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\allen\\OneDrive\\桌面\\HotKey\\CopyToast\\CopyToast.csproj": {}
+    "C:\\Users\\allen\\OneDrive\\桌面\\AIHotKey\\CopyToast.csproj": {}
   },
   "projects": {
-    "C:\\Users\\allen\\OneDrive\\桌面\\HotKey\\CopyToast\\CopyToast.csproj": {
+    "C:\\Users\\allen\\OneDrive\\桌面\\AIHotKey\\CopyToast.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\allen\\OneDrive\\桌面\\HotKey\\CopyToast\\CopyToast.csproj",
+        "projectUniqueName": "C:\\Users\\allen\\OneDrive\\桌面\\AIHotKey\\CopyToast.csproj",
         "projectName": "AIHotKey",
-        "projectPath": "C:\\Users\\allen\\OneDrive\\桌面\\HotKey\\CopyToast\\CopyToast.csproj",
+        "projectPath": "C:\\Users\\allen\\OneDrive\\桌面\\AIHotKey\\CopyToast.csproj",
         "packagesPath": "C:\\Users\\allen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\allen\\OneDrive\\桌面\\HotKey\\CopyToast\\obj\\",
+        "outputPath": "C:\\Users\\allen\\OneDrive\\桌面\\AIHotKey\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\allen\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,12 +43,6 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.19, )",
-              "autoReferenced": true
-            },
             "OpenAI": {
               "target": "Package",
               "version": "[2.5.0, )"

@@ -208,7 +208,7 @@ namespace AIHotKey
 
             try
             {
-                ChatClient client = new(model: "gpt-4o", apiKey: key);
+                ChatClient client = new(model: "gpt-5-nano", apiKey: key);
                 ChatCompletion completion = client.CompleteChat(
                     "Please make the following paragraph smoother and grammatically correct; " +
                     "return only the plain revised text without quotes and nothing else:\n\n\"" + orig + "\"");

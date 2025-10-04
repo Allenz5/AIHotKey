@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AIHotKey")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9aa7aef3dec4610dfd82f8faf4b4206ffb5512bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("AIHotKey")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AIHotKey")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
