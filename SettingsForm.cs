@@ -23,7 +23,7 @@ namespace AIHotKey
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Size = new Size(150, 200);
+            Size = new Size(550, 220);
             StartPosition = FormStartPosition.CenterParent;
 
             var panel = new TableLayoutPanel
@@ -31,49 +31,77 @@ namespace AIHotKey
                 Dock = DockStyle.Fill,
                 ColumnCount = 3,
                 RowCount = 3,
-                Padding = new Padding(15)
+                Padding = new Padding(20),
+                AutoSize = true
             };
-            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120));
+            
+            // Column styles
+            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130));
             panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100));
-            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
-            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
-            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80));
+            
+            // Row styles
+            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
+            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
+            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
 
+            // Row 0: API Key
             var lblKey = new Label 
             { 
                 Text = "OpenAI API Key:", 
                 Dock = DockStyle.Fill, 
-                TextAlign = ContentAlignment.MiddleLeft 
+                TextAlign = ContentAlignment.MiddleLeft,
+                AutoSize = false
             };
 
             txtKey = new TextBox 
             { 
-                Dock = DockStyle.Fill, 
+                Dock = DockStyle.Fill,
                 UseSystemPasswordChar = true, 
-                PlaceholderText = "sk-..." 
+                PlaceholderText = "sk-...",
+                Anchor = AnchorStyles.Left | AnchorStyles.Right
             };
             
             btnSave = new Button 
             { 
                 Text = "Save", 
-                Dock = DockStyle.Fill 
+                Dock = DockStyle.Fill,
+                UseVisualStyleBackColor = true
             };
             btnSave.Click += (s, e) => SaveKey();
 
+            panel.Controls.Add(lblKey, 0, 0);
+            panel.Controls.Add(txtKey, 1, 0);
+            panel.Controls.Add(btnSave, 2, 0);
+
+            // Row 1: Show Password
+            var lblShow = new Label 
+            { 
+                Text = "Show password:", 
+                Dock = DockStyle.Fill, 
+                TextAlign = ContentAlignment.MiddleLeft,
+                AutoSize = false
+            };
+            
             chkShow = new CheckBox 
             { 
                 Text = "Show", 
-                Dock = DockStyle.Left,
-                AutoSize = true
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleLeft,
+                AutoSize = false
             };
             chkShow.CheckedChanged += (s, e) => txtKey.UseSystemPasswordChar = !chkShow.Checked;
 
+            panel.Controls.Add(lblShow, 0, 1);
+            panel.Controls.Add(chkShow, 1, 1);
+
+            // Row 2: Run at Startup
             chkStartup = new CheckBox 
             { 
                 Text = "Run at startup", 
-                Dock = DockStyle.Left,
-                AutoSize = true
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleLeft,
+                AutoSize = false
             };
             chkStartup.CheckedChanged += (s, e) =>
             {
@@ -90,19 +118,6 @@ namespace AIHotKey
                     chkStartup.CheckedChanged += (s2, e2) => { };
                 }
             };
-
-            panel.Controls.Add(lblKey, 0, 0);
-            panel.Controls.Add(txtKey, 1, 0);
-            panel.Controls.Add(btnSave, 2, 0);
-
-            var lblShow = new Label 
-            { 
-                Text = "Show password:", 
-                Dock = DockStyle.Fill, 
-                TextAlign = ContentAlignment.MiddleLeft 
-            };
-            panel.Controls.Add(lblShow, 0, 1);
-            panel.Controls.Add(chkShow, 1, 1);
 
             panel.Controls.Add(chkStartup, 0, 2);
             panel.SetColumnSpan(chkStartup, 3);
@@ -201,4 +216,3 @@ namespace AIHotKey
         }
     }
 }
-

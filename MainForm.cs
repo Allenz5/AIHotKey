@@ -42,17 +42,17 @@ namespace AIHotKey
             // Menu Bar
             menuStrip = new MenuStrip();
             
-            // Profile buttons will be added here dynamically
+            // Settings button (always first)
+            var settingsMenu = new ToolStripMenuItem("Settings");
+            settingsMenu.Click += (s, e) => OpenSettings();
+            menuStrip.Items.Add(settingsMenu);
             
-            // Add Profile button
+            // Add Profile button (after Settings)
             var addProfileMenu = new ToolStripMenuItem("+ Add Profile");
             addProfileMenu.Click += (s, e) => AddNewProfile();
             menuStrip.Items.Add(addProfileMenu);
             
-            // Settings button
-            var settingsMenu = new ToolStripMenuItem("Settings");
-            settingsMenu.Click += (s, e) => OpenSettings();
-            menuStrip.Items.Add(settingsMenu);
+            // Profile buttons will be added after these
             
             MainMenuStrip = menuStrip;
             Controls.Add(menuStrip);
@@ -99,7 +99,7 @@ namespace AIHotKey
 
         private void RebuildProfileButtons()
         {
-            // Remove all profile buttons (but keep Add Profile and Settings)
+            // Remove all profile buttons (but keep Settings and Add Profile)
             var itemsToRemove = menuStrip.Items.Cast<ToolStripItem>()
                 .Where(item => item.Tag is Profile)
                 .ToList();
@@ -109,14 +109,14 @@ namespace AIHotKey
                 menuStrip.Items.Remove(item);
             }
 
-            // Add profile buttons at the beginning
-            for (int i = profiles.Count - 1; i >= 0; i--)
+            // Add profile buttons after "Add Profile" button (index 2, after Settings and Add Profile)
+            for (int i = 0; i < profiles.Count; i++)
             {
                 var profile = profiles[i];
                 var profileButton = new ToolStripMenuItem(profile.Name);
                 profileButton.Tag = profile;
                 profileButton.Click += (s, e) => ShowProfile(profile);
-                menuStrip.Items.Insert(0, profileButton);
+                menuStrip.Items.Add(profileButton);
             }
         }
 
