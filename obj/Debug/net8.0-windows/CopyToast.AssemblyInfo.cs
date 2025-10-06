@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CopyToast")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9aa7aef3dec4610dfd82f8faf4b4206ffb5512bd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+831de739c9cd54fd8d9e669b6016df49f8ebf25c")]
 [assembly: System.Reflection.AssemblyProductAttribute("CopyToast")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CopyToast")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
